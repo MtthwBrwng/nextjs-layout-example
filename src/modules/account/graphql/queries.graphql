@@ -1,0 +1,10 @@
+query AccountOverviewAdminQuery {
+    listAccounts {
+        items {
+            id
+            createdAt
+            updatedAt
+            name
+        }
+    }
+}

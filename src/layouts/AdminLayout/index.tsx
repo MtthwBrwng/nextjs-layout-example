@@ -1,4 +1,5 @@
 import React from "react";
+import {AppShell, Group, Header, Navbar, Text} from "@mantine/core";
 
 interface Props {
     children: React.ReactNode
@@ -6,12 +7,27 @@ interface Props {
 
 export const AdminLayout = ({children}: Props) => {
     return (
-        <div>
-            <header>Admin Header</header>
-            <main>{children}</main>
-            <footer>Admin Footer</footer>
-        </div>
+        <AppShell padding="md" navbar={<AdminNavbar/>} header={<AdminHeader/>}>
+            {children}
+        </AppShell>
     )
 }
+
+const AdminNavbar = () => {
+    return (
+        <Header height={72} p={"md"}>
+            <Group align={"center"} position={"apart"} sx={{height: "100%"}}>
+                <Text size={"xl"} weight={800}>VOIP+</Text>
+                <Group></Group>
+            </Group>
+        </Header>
+    )
+}
+const AdminHeader = () => {
+    return (
+        <Navbar width={{base: 225}} height={500} p="xs">{/* Navbar content */}</Navbar>
+    )
+}
+
 
 export default AdminLayout

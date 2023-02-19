@@ -1,0 +1,12 @@
+query UserOverviewAdminQuery {
+    listUsers {
+        items {
+            id
+            createdAt
+            updatedAt
+            firstName
+            lastName
+            email
+        }
+    }
+}

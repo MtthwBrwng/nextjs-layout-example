@@ -1,0 +1,14 @@
+{
+  "name": "Graphql Schema",
+  "schemaPath": "amplify/backend/api/nextjslayoutexaple/build/schema.graphql",
+  "excludes": [
+    "amplify/backend/api/nextjslayoutexaple/schema/**/*.graphql",
+    "amplify/backend/api/nextjslayoutexaple/_aws.graphql"
+  ],
+  "projects": {},
+  "extensions": {
+    "amplify": {
+      "version": 3
+    }
+  }
+}

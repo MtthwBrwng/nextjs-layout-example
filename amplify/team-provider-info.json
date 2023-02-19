@@ -1,0 +1,31 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nextjslayoutexample-dev-170955-authRole",
+      "UnauthRoleArn": "arn:aws:iam::560234426310:role/amplify-nextjslayoutexample-dev-170955-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::560234426310:role/amplify-nextjslayoutexample-dev-170955-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-nextjslayoutexample-dev-170955-deployment",
+      "UnauthRoleName": "amplify-nextjslayoutexample-dev-170955-unauthRole",
+      "StackName": "amplify-nextjslayoutexample-dev-170955",
+      "StackId": "arn:aws:cloudformation:us-west-1:560234426310:stack/amplify-nextjslayoutexample-dev-170955/f6a0cf40-af28-11ed-8e1e-02c2984ed4ff",
+      "AmplifyAppId": "d2duhl25ofust2",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-nextjslayoutexample-dev-170955-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "nextjslayoutexampleda986336": {}
+      },
+      "function": {
+        "nextjslayoutexampleda986336PostConfirmation": {
+          "GROUP": "users",
+          "deploymentBucketName": "amplify-nextjslayoutexample-dev-170955-deployment",
+          "s3Key": "amplify-builds/nextjslayoutexampleda986336PostConfirmation-505950366d5667427065-build.zip"
+        }
+      },
+      "api": {
+        "nextjslayoutexample": {}
+      }
+    }
+  }
+}

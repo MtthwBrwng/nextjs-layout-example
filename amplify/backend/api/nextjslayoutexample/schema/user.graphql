@@ -1,0 +1,8 @@
+type User @model @auth(rules: [{allow: owner, operations: [read, update]}, {allow: groups, groups: ["admins"]}]) {
+    id: ID! @primaryKey
+    createdAt: AWSDateTime!
+    updatedAt: AWSDateTime!
+    firstName: String!
+    lastName: String!
+    email: AWSEmail!
+}

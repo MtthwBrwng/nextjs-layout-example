@@ -1,7 +1,7 @@
 import AdminLayout from "@/layouts/AdminLayout";
 import NextLink from "next/link";
 
-const AdminPage = () => {
+const AdminOverviewPage = () => {
     return (
         <div>
             <p>Admin Page</p>
@@ -10,6 +10,6 @@ const AdminPage = () => {
     )
 }
 
-AdminPage.Layout = AdminLayout
+AdminOverviewPage.Layout = AdminLayout
 
-export default AdminPage
+export default AdminOverviewPage

@@ -1,4 +1,5 @@
 import React from "react";
+import {AppShell, Group, Header, Text} from "@mantine/core";
 
 interface Props {
     children: React.ReactNode
@@ -6,11 +7,19 @@ interface Props {
 
 export const DefaultLayout = ({children}: Props) => {
     return (
-        <div>
-            <header>Header</header>
-            <main>{children}</main>
-            <footer>Footer</footer>
-        </div>
+        <AppShell padding={"lg"} header={<DefaultHeader/>}>
+            {children}
+        </AppShell>
+    )
+}
+
+const DefaultHeader = () => {
+    return (
+        <Header height={72} p={"md"}>
+            <Group align={"center"} position={"apart"} sx={{height: "100%"}}>
+                <Text size={"xl"} weight={800}>VOIP+</Text>
+            </Group>
+        </Header>
     )
 }
 
