@@ -62,6 +62,26 @@
     }
   },
   "function": {
+    "CreateDeviceResolver": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "CreatePhoneNumberResolver": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "LinkDevicePhoneNumberResolver": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "UploadResolver": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "nextjslayoutexampleda986336PostConfirmation": {
       "build": true,
       "providerPlugin": "awscloudformation",

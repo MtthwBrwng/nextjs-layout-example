@@ -5,4 +5,5 @@ type User @model @auth(rules: [{allow: owner, operations: [read, update]}, {allo
     firstName: String!
     lastName: String!
     email: AWSEmail!
+    devices: [Device] @hasMany
 }

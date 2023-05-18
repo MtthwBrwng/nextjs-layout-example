@@ -1,8 +1,0 @@
-type Account @model @auth(rules: [{allow: owner}, {allow: groups, groupsField: "tenant", operations: [read, update]} {allow: groups, groups: ["admins"]}]) {
-    id: ID! @primaryKey
-    createdAt: AWSDateTime!
-    updatedAt: AWSDateTime!
-    name: String
-    #products: AWSJSON
-    #users: [User] @manyToMany(relationName: "AccountUser")
-}

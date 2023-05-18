@@ -1,0 +1,5 @@
+schema:
+  - amplify/backend/api/nextjslayoutexample/build/schema.graphql
+  - amplify/backend/api/nextjslayoutexample/_aws.graphql
+amplify:
+  version: 3.0

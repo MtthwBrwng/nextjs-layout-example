@@ -1,0 +1,7 @@
+type PhoneNumber @model @auth(rules: [{allow: owner, operations: [read, update]}, {allow: groups, groups: ["admins"]}]) {
+    id: ID! @primaryKey
+    createdAt: AWSDateTime!
+    updatedAt: AWSDateTime!
+    phoneNumber: String!
+    device: Device @hasOne
+}

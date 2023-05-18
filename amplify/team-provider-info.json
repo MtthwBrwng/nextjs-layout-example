@@ -21,7 +21,11 @@
           "GROUP": "users",
           "deploymentBucketName": "amplify-nextjslayoutexample-dev-170955-deployment",
           "s3Key": "amplify-builds/nextjslayoutexampleda986336PostConfirmation-505950366d5667427065-build.zip"
-        }
+        },
+        "UploadResolver": {},
+        "CreatePhoneNumberResolver": {},
+        "LinkDevicePhoneNumberResolver": {},
+        "CreateDeviceResolver": {}
       },
       "api": {
         "nextjslayoutexample": {}
