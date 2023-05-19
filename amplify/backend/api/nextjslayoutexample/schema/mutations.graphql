@@ -4,7 +4,7 @@ type Mutations {
 
     createPhoneNumber(input: CreateDeviceInput): Device @function(name: "CreatePhoneNumberResolver-{env}")
 
-    upload(files: [S3ObjectInput]): [Device] @function(name: "UploadResolver-{env}")
+    upload(files: [S3ObjectInput!]): [Device] @function(name: "UploadResolver-{env}")
 }
 
 type S3Object {

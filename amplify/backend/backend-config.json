@@ -89,6 +89,70 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_CreateDeviceResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateDeviceResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateDeviceResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateDeviceResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreatePhoneNumberResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreatePhoneNumberResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreatePhoneNumberResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreatePhoneNumberResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_LinkDevicePhoneNumberResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LinkDevicePhoneNumberResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_LinkDevicePhoneNumberResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "LinkDevicePhoneNumberResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_UploadResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UploadResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_UploadResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UploadResolver"
+        }
+      ]
+    },
     "AMPLIFY_function_nextjslayoutexampleda986336PostConfirmation_GROUP": {
       "usedBy": [
         {

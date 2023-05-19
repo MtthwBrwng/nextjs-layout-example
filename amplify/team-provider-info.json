@@ -22,10 +22,22 @@
           "deploymentBucketName": "amplify-nextjslayoutexample-dev-170955-deployment",
           "s3Key": "amplify-builds/nextjslayoutexampleda986336PostConfirmation-505950366d5667427065-build.zip"
         },
-        "UploadResolver": {},
-        "CreatePhoneNumberResolver": {},
-        "LinkDevicePhoneNumberResolver": {},
-        "CreateDeviceResolver": {}
+        "UploadResolver": {
+          "deploymentBucketName": "amplify-nextjslayoutexample-dev-170955-deployment",
+          "s3Key": "amplify-builds/UploadResolver-4e6764747431395a4a59-build.zip"
+        },
+        "CreatePhoneNumberResolver": {
+          "deploymentBucketName": "amplify-nextjslayoutexample-dev-170955-deployment",
+          "s3Key": "amplify-builds/CreatePhoneNumberResolver-5a446b71794c324c6375-build.zip"
+        },
+        "LinkDevicePhoneNumberResolver": {
+          "deploymentBucketName": "amplify-nextjslayoutexample-dev-170955-deployment",
+          "s3Key": "amplify-builds/LinkDevicePhoneNumberResolver-7078344e6a4f54417148-build.zip"
+        },
+        "CreateDeviceResolver": {
+          "deploymentBucketName": "amplify-nextjslayoutexample-dev-170955-deployment",
+          "s3Key": "amplify-builds/CreateDeviceResolver-2b503539634b7a4e6858-build.zip"
+        }
       },
       "api": {
         "nextjslayoutexample": {}

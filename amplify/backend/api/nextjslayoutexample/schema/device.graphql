@@ -6,6 +6,6 @@ type Device @model @auth(rules: [{allow: owner, operations: [read, update]}, {al
     phoneNumbers: [PhoneNumber] @hasMany
 }
 
-type CreateDeviceInput {
+input CreateDeviceInput {
     name: String!
 }

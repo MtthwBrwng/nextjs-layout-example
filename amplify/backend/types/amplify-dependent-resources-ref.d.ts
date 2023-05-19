@@ -17,6 +17,34 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
+    "CreateDeviceResolver": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "CreatePhoneNumberResolver": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "LinkDevicePhoneNumberResolver": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "UploadResolver": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "nextjslayoutexampleda986336PostConfirmation": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
