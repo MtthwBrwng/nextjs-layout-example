@@ -28,7 +28,7 @@ interface FormProps {
 const ImportAdminPage = () => {
     const deviceModelsList = []
 
-    const {onSubmit, values, errors, getInputProps} = useForm<FormProps>({
+    const {onSubmit, values, errors, getInputProps, insertListItem} = useForm<FormProps>({
         initialValues: {
             rows: [
                 {
@@ -85,9 +85,30 @@ const ImportAdminPage = () => {
                             </Stack>
                         </Paper>
                     ))}
-                    <Group position={"right"}>
-                        <Button type={"submit"}>Submit</Button>
-                        <Button type={"submit"}>Clear</Button>
+                    <Group position={"apart"}>
+                        <Group>
+                            <Button onClick={() => insertListItem('rows', {
+                                firstName: '',
+                                lastName: '',
+                                email: '',
+                                ext: [],
+                                dids: [],
+                                accessLevel: 'user',
+                                hardware: {
+                                    brand: '',
+                                    model: '',
+                                    macAddress: '',
+                                    pendingMac: false,
+                                },
+                                requiresSoftphone: false,
+                                notes: '',
+                            })}>Add</Button>
+                        </Group>
+                        <Group>
+                            <Button type={"submit"}>Submit</Button>
+                            <Button type={"submit"}>Clear</Button>
+                        </Group>
+
                     </Group>
                 </Stack>
             </form>

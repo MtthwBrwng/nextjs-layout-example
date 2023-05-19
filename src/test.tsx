@@ -236,44 +236,7 @@ function UserRow({form, index, allNumbers, setAllNumbers, deviceModelsList, setV
                 </Grid.Col>
 
 
-                <Grid.Col span={3}>
-                    <Select
-                        label="Device Model"
-                        placeholder="Device Model"
-                        value={deviceValue}
-                        data={deviceModelsList}
-                        onChange={(value) => {
-                            const deviceModel = value || '';
-                            setDeviceValue(deviceModel);
-                        }}
-                        searchable
-                        error={form.errors && form.errors[`rows.${index}.hardware.model`]}
-                    />
-                </Grid.Col>
 
-                <Grid.Col span={3}>
-                    <TextInput
-                        label="Mac Address"
-                        placeholder="00:00:00:00:00:00"
-                        value={macAddressValue}
-                        maxLength={17}
-                        error={form.errors && form.errors[`rows.${index}.hardware.mac_address`]}
-                        onChange={(event) => {
-                            let input = event.target.value;
-                            const formattedInput = input
-                                .replace(/[^0-9A-Fa-f]/g, "")
-                                .toUpperCase()
-                                .match(/.{1,2}/g)
-                                ?.join(":") || "";
-
-                            if (formattedInput.length <= 17) {
-                                setMacAddressValue(formattedInput);
-                            } else {
-                                setMacAddressValue(formattedInput.substring(0, 17));
-                            }
-                        }}
-                    />
-                </Grid.Col>
             </Grid>
         </Flex>
     );
