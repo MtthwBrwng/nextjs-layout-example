@@ -17,7 +17,7 @@ const DefaultHeader = () => {
     return (
         <Header height={72} p={"md"}>
             <Group align={"center"} position={"apart"} sx={{height: "100%"}}>
-                <Text size={"xl"} weight={800}>VOIP+</Text>
+                <Text size={"xl"} weight={800}>Audian</Text>
             </Group>
         </Header>
     )
