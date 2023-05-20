@@ -10,8 +10,8 @@ interface FormProps {
             firstName: '',
             lastName: '',
             email: '',
-            ext: [],
-            dids: [],
+            ext: string[],
+            dids: string[],
             accessLevel: 'user' | 'admin',
             hardware: {
                 brand: '',
@@ -28,7 +28,7 @@ interface FormProps {
 const ImportAdminPage = () => {
     const deviceModelsList = []
 
-    const {onSubmit, values, errors, getInputProps, insertListItem} = useForm<FormProps>({
+    const {onSubmit, setValues, setFieldValue, values, errors, getInputProps, insertListItem} = useForm<FormProps>({
         initialValues: {
             rows: [
                 {
@@ -57,30 +57,51 @@ const ImportAdminPage = () => {
     }
 
     return (
-        <Container size={"lg"}>
+        <Container size={"xl"}>
             <form onSubmit={onSubmit(handleSubmit)}>
                 <Stack>
                     {values?.rows?.map((value, index) => (
-                        <Paper key={index}  radius={"sm"} sx={{overflow: "hidden"}} withBorder>
+                        <Paper key={index} radius={"sm"} sx={{overflow: "hidden"}} withBorder>
                             <Stack p={"xs"} bg={"blue"}>
-                                <Text color={"white"} inherit>Row {index+1}</Text>
+                                <Text color={"white"} inherit>Row {index + 1}</Text>
                             </Stack>
                             <Stack p={"xs"}>
                                 <Group grow>
-                                    <TextInput label={"First Name"} placeholder={"First Name"} {...getInputProps(`rows.${index}.firstName`)}/>
-                                    <TextInput label={"Last Name"} placeholder={"Last Name"} {...getInputProps(`rows.${index}.lastName`)}/>
-                                    <TextInput label={"Email Address"} placeholder={"Email Address"} {...getInputProps(`rows.${index}.email`)}/>
+                                    <TextInput label={"First Name"}
+                                               placeholder={"First Name"} {...getInputProps(`rows.${index}.firstName`)}/>
+                                    <TextInput label={"Last Name"}
+                                               placeholder={"Last Name"} {...getInputProps(`rows.${index}.lastName`)}/>
+                                    <TextInput label={"Email Address"}
+                                               placeholder={"Email Address"} {...getInputProps(`rows.${index}.email`)}/>
                                 </Group>
                                 <Group grow>
-                                    <MultiSelect label={"Extension"} placeholder={"Extension"} data={[]} {...getInputProps(`rows.${index}.ext`)}/>
-                                    <MultiSelect label={"Phone Numbers"} placeholder={"Phone Numbers"} data={[]} {...getInputProps(`rows.${index}.dids`)}/>
-                                    <Select label={"Role"} placeholder={"Role"} data={[{value: 'user', label: 'User'}, {value: 'admin', label: 'Admin'}]} {...getInputProps(`rows.${index}.accessLevel`)}/>
+                                    <MultiSelect label={"Extension"} placeholder={"Extension"}
+                                                 data={values.rows[index].ext} {...getInputProps(`rows.${index}.ext`)}
+                                                 getCreateLabel={(query) => `+ Create ${query}`}
+                                                 onCreate={(query) => {
+                                                     setFieldValue(`rows.${index}.ext`, [...values.rows[index].ext, query])
+                                                     return query;
+                                                 }} creatable searchable/>
+                                    <MultiSelect label={"Phone Numbers"} placeholder={"Phone Numbers"}
+                                                 data={values.rows[index].dids} {...getInputProps(`rows.${index}.dids`)}
+                                                 getCreateLabel={(query) => `+ Create ${query}`}
+                                                 onCreate={(query) => {
+                                                     setFieldValue(`rows.${index}.dids`, [...values.rows[index].ext, query])
+                                                     return query;
+                                                 }} creatable searchable />
+                                    <Select label={"Role"} placeholder={"Role"} data={[{value: 'user', label: 'User'}, {
+                                        value: 'admin',
+                                        label: 'Admin'
+                                    }]} {...getInputProps(`rows.${index}.accessLevel`)}/>
                                 </Group>
                                 <Group grow>
-                                    <Select label={"Device Model"} placeholder={"Device Model"} data={[{label: "iPhone", value: "iphone"}]} {...getInputProps(`rows.${index}.hardware.brand`)}/>
-                                    <TextInput label={"Mac Address"} placeholder={"00:00:00:00:00:00"} {...getInputProps(`rows.${index}.hardware.macAddress`)}/>
-                                    <Checkbox label={"Pending Audian MAC"} placeholder={"Pending Audian MAC"}/>
-                                    <Checkbox label={"Requires Softphone"} placeholder={"Requires Softphone"}/>
+                                    <Select label={"Device Model"} placeholder={"Device Model"} data={["iPhone"]}  {...getInputProps(`rows.${index}.hardware.model`)}/>
+                                    <TextInput label={"Mac Address"}
+                                               placeholder={"00:00:00:00:00:00"} {...getInputProps(`rows.${index}.hardware.macAddress`)}/>
+                                    <Checkbox
+                                        label={"Pending Audian MAC"} {...getInputProps(`rows.${index}.hardware.pendingMac`)}/>
+                                    <Checkbox
+                                        label={"Requires Softphone"} {...getInputProps(`rows.${index}.requiresSoftphone`)}/>
                                 </Group>
                             </Stack>
                         </Paper>
@@ -108,7 +129,6 @@ const ImportAdminPage = () => {
                             <Button type={"submit"}>Submit</Button>
                             <Button type={"submit"}>Clear</Button>
                         </Group>
-
                     </Group>
                 </Stack>
             </form>
@@ -125,13 +145,13 @@ export const formValidation = z.object({
         dids: z.array(z.string()).min(1, "Must include at least (1) phone number"),
         accessLevel: z.enum(["user", "admin"]),
         hardware: z.object({
-            brand: z.string().nonempty("Select device brand"),
-            model: z.string().nonempty("Select device model"),
+            // brand: z.string().nonempty("Select device brand"),
+            // model: z.string().nonempty("Select device model"),
             macAddress: z.string().nonempty("Select device mac address"),
             pendingMac: z.boolean(),
-        }).required(),
-        requiresSoftPhone: z.boolean(),
-        notes: z.string(),
+        }),
+        requiresSoftphone: z.boolean().optional(),
+        // notes: z.string(),
     })),
 })
 
